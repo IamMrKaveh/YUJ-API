@@ -7,8 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 var services = new ServiceCollection();
 
 services.AddDbContext<YujContext>(options =>
-    options.UseSqlServer("Data Source=.;Initial Catalog=DBYuj;Integrated Security=True; Trusted_Connection=True;TrustServerCertificate=True;")
-);
+    options.UseSqlServer(@"
+Data Source=.;
+Initial Catalog=DBYuj;
+Integrated Security=True;
+Trusted_Connection=True;
+TrustServerCertificate=True;
+"));
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
